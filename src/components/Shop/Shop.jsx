@@ -7,6 +7,12 @@ import "./Shop.css";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [showAll, setShowAll] = useState(false);
+
+  // Show All Products
+  const handleShowAll = () => {
+    setShowAll(true);
+  };
 
   useEffect(() => {
     fetch("products.json")
@@ -27,9 +33,9 @@ const Shop = () => {
         const quantity = storedCart[id];
         addedProduct.quantity = quantity;
         // Step 4: Add the addedProduct to the savedCart
-        savedCart.push(addedProduct)
+        savedCart.push(addedProduct);
       }
-    //  Step 5: Set the cart
+      //  Step 5: Set the cart
       setCart(savedCart);
     }
   }, [products]);
@@ -43,7 +49,7 @@ const Shop = () => {
   return (
     <div className="shop-container">
       <div className="product-container">
-        {products.map((product) => (
+        {products.slice(0, showAll ? 76 : 6).map((product) => (
           <Product
             key={product.id}
             product={product}
@@ -54,6 +60,11 @@ const Shop = () => {
       <div className="cart-container">
         <Cart cart={cart}></Cart>
       </div>
+      {!showAll && (
+        <div className="btn-seeMore">
+          <button onClick={handleShowAll}>See More</button>
+        </div>
+      )}
     </div>
   );
 };

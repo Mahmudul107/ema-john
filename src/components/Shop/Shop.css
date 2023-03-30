@@ -8,3 +8,16 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 45px;
 }
+.btn-seeMore{
+    margin-left: 700px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+    border: none
+}
+.btn-seeMore button{
+    background-color: #ffe0b3;
+}
+.btn-seeMore button:hover{
+    background-color: orange;
+}
