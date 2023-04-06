@@ -1,23 +1,27 @@
-.shop-container{
+.shop-container {
     display: grid;
     grid-template-columns: 4fr 1fr;
+    /* position: relative; */
 }
-.product-container{
+
+.products-container {
     margin: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 45px;
+    gap: 45px;
 }
-.btn-seeMore{
-    margin-left: 700px;
-    justify-content: center;
+.proceed-link{
+    text-decoration: none;
+}
+.btn-proceed {
+    background: #FF9900;
+    width: 90%;
+    height: 56px;
+    font-size: 21px;
+    margin: 10px auto;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 50px;
-    border: none
-}
-.btn-seeMore button{
-    background-color: #ffe0b3;
-}
-.btn-seeMore button:hover{
-    background-color: orange;
 }
